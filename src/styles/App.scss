@@ -1,0 +1,193 @@
+
+$black: #3D195B;
+$blue: #88A5D4;
+$blue_light: #9CCAF6;
+$blue_lightest: #CFDEF5;
+$blue_super_light: #E4EDFB;
+
+$liked_team: #405C89;
+
+$grey: #728CA6;
+
+$border_color: #011223;
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 100%;
+}
+
+.App-header {
+  background-color: white;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  border-bottom: 2px solid $border_color;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.main-container {
+  position: relative;
+}
+
+.team-container {
+  padding: 20px;
+
+  .team {
+    padding: 10px;
+    background-color: $blue_super_light;
+    position: relative;
+
+    &.selected {
+      background-color: $blue_lightest;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $blue_lightest;
+    }
+  }
+
+  .icons-container {
+    position: absolute;
+    right: 0;
+  }
+
+  .crestImg {
+    width: auto;
+    height: 100px;
+  }
+
+  .team-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .more-info {
+    max-height: 0;
+    transition: max-height 0.25s ease-out;
+    overflow: hidden;
+  }
+
+  .more-info {
+    &.show{
+      border-top: 1px solid black;
+      max-height: 500px;
+      transition: max-height 0.50s ease-in;
+    }
+  }
+
+}
+
+.team-details {
+  padding-top: 30px;
+  color: $blue_light;
+
+  .club-name {
+    color: white;
+  }
+
+}
+
+ul.favourite-teams li {
+  display: inline;
+
+}
+
+li + li::before {
+  content: " | ";
+  font-weight: bold;
+  color: $blue;
+}
+
+.favourite-teams {
+  padding-left: 0px;
+  font-size: 15px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.money {
+  color: green;
+}
+
+.like-icon {
+  color: $blue;
+  float: right;
+  font-size: 30px;
+  padding: 10px;
+  right: 15px;
+  top: 15px !important;
+
+  &:before {
+    content: "\e157";
+  }
+
+  &:hover {
+    &:before {
+      color: $liked_team;
+    }
+  }
+
+  &.liked {
+    &:hover {
+      &:before {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.liked {
+  color: $liked_team;
+
+  &:before{
+    content: "\e067";
+  }
+
+}
+
+.close-details {
+  font-size: 25px;
+  float: right;
+  padding-top: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  color: $grey;
+
+  &:hover {
+    color: white;
+  }
+}
+
+
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: $black; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 150px !important; /* Place content 60px from the top + 150px for the topbar */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 150px;
+}
