@@ -1,3 +1,3 @@
 Personal project testing React
 
-Clone and npm-start
+Clone and npm-install => npm-start
